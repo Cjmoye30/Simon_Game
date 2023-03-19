@@ -1,9 +1,17 @@
+:root {
+    --c1: #000000;
+    --c2: #282A3A;
+    --c3: #735F32;
+    --c4: #C69749;
+}
 * {
     margin: 0;
     padding: 0;
-    border: .1px solid black;
 }
 
+body {
+    color: var(--c4);
+}
 
 /* Header Section */
 header {
@@ -11,13 +19,13 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 100px;
-    background-color: olive;
-    color: whitesmoke;
+    background-color: var(--c1);
+    color: var(--c4);
 }
 
 #highscoresTable {
     text-decoration: none;
-    color: whitesmoke;
+    color: var(--c4);
 }
 
 /* Main Content */
@@ -26,6 +34,10 @@ main {
     flex-direction: column;
     align-items: center;
     margin: 50px 0;
+}
+
+#titleElement {
+    
 }
 
 button {
@@ -43,6 +55,38 @@ button {
     height: 250px;
     width: 250px;
     margin: 10px;
+}
+
+#red {
+    background-color: red;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#green {
+    background-color: green;
+}
+
+.flash {
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+.flash {
+    background-color: whitesmoke;
 }
 
 
