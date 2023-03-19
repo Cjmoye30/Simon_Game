@@ -5,13 +5,17 @@ const maxLevel = 20;
 let level = 0;
 let displayIndex = 0;
 let checkIndex = 0;
+let seconds = 0;
+let finalSeconds = 0;
 
 // Event Listeners
 $("#startButton").click(function () {
     level = 1;
-    $("#titleElement").text("Level: " + level);
-    $("#startButton").attr("style", "display: none");
+    $("#level").text("Level: " + level);
+    $("#titleSection").attr("style", "display: none");
+    $("#level").attr("style", "display: block");
     playGame();
+    gameClock();
 })
 
 $(".col").click(function (e) {
@@ -25,13 +29,28 @@ $(".col").click(function (e) {
             level++;
             console.log(level);
             setTimeout(function(){
-                $("#titleElement").text("Level: "+level);
+                $("#level").text("Level: "+level);
                 playGame();
             },500)
         }
     } else {
         console.log("Incorrect!");
-        $("#titleElement").text("Wrong!");
+        $("#level").text("Wrong!");
+        finalSeconds = seconds;
+        clearInterval(gameTimer);
+
+        $("body").attr("style", "background-color: red");
+        setTimeout(() => {
+            $("body").attr("style", "background-color: white");
+        }, 100);
+
+        // Show the user score and highscore sections
+
+        setTimeout(() => {
+            userScore();
+            $("#gameContainer").attr("style", "display: none");
+            $("#highscoresSection").attr("style", "display: block");            
+        }, 1000);
     }
 })
 
@@ -72,6 +91,18 @@ function effects(x) {
     // Play sound of button click or computer generate
     var audio = new Audio("assets/sounds/" + x + ".mp3")
     audio.play();
+}
+
+function gameClock (){
+    gameTimer = setInterval(() => {
+        seconds++;
+        $("#timer").text(seconds);
+    }, 1000);
+}
+
+function userScore () {
+    $("#userLevel").text(level - 1);
+    $("#userTime").text(finalSeconds);
 }
 
 // Create game pattern on document load

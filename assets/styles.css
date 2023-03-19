@@ -7,6 +7,7 @@
 * {
     margin: 0;
     padding: 0;
+    border: 1px solid black;
 }
 
 body {
@@ -21,6 +22,7 @@ header {
     height: 100px;
     background-color: var(--c1);
     color: var(--c4);
+    padding: 0 50px;
 }
 
 #highscoresTable {
@@ -28,7 +30,20 @@ header {
     color: var(--c4);
 }
 
+/* Title Container */
+#titleContainer {
+    text-align: center;
+}
+
 /* Main Content */
+#gameContainer {
+    text-align: center;
+}
+
+#level {
+    display: none;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -36,14 +51,14 @@ main {
     margin: 50px 0;
 }
 
-#titleElement {
-    
-}
-
 button {
-    width: 400px;
+    width: 300px;
     padding: 20px;
     margin: 10px 0;
+    background-color: var(--c1);
+    color: var(--c4);
+    font-weight: bold;
+    font-size: 24px;
 }
 
 /* Boxes */
@@ -77,16 +92,79 @@ button {
     background-color: black;
 }
 
-
-
-
-
-
-
-
-
-.flash {
-    background-color: whitesmoke;
+/* Highscores Section */
+#highscoresSection {
+    /* display: none; */
 }
+
+/* Footer Section */
+footer {
+    text-align: center;
+}
+
+/* Contact Info */
+.contact-icon-img {
+    height: 50px;
+    width: 50px;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.contact-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-group-inner {
+    border-right: 1px solid;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    padding: 20px 0px;
+    align-items: center;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.contact-text-link {
+    display: none;
+}
+
+.contact-text-link,
+.phone-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.phone-icon-group {
+    position: relative;
+}
+
+.phone-text {
+    position: absolute;
+    display: none;
+}
+
+/* Effects for Phone Icon Only */
+.phone-icon-group:hover .contact-icon-img {
+    opacity: .2;
+}
+
+.phone-icon-group:hover .phone-text {
+    display: block;
+    opacity: 1;
+}
+
 
 

@@ -21,31 +21,102 @@
     </header>
 
     <main>
+        <!-- Introduction Seciton - greet and explain -->
+        <section id="titleSection">
+            <div id="titleContainer">
+                <h1 id="titleElement">Welcome to the Simon Game!</h1>
+                <p class="titleDescription">Once you click on the <strong>Start Button</strong> below, the game will begin!
+                </p>
+                <p class="titleDescription">As you progress through the levels, speed of the game will increase and it will
+                    become more challenging.</p>
+                <p class="titleDescription">The max level is <strong>Level 20</strong>! Good luck!!</p>
+    
+                <div class="startButton">
+                    <button id="startButton">Start!</button>
+                </div>
+            </div>
+        </section>
 
-        <div id="titleContainer">
-            <h1 id="titleElement">Welcome to the Simon Game!</h1>
-        </div>
+        <!-- Game Container -->
+        <section id="gameContainer">
+            <h1 id="level"></h1>
+            <div class="row top-row">
+                <div id="red" class="col"></div>
+                <div id="blue" class="col"></div>
+            </div>
 
-        <div class="startButton">
-            <button id="startButton">Start!</button>
-        </div>
-        <div class="row">
-            <div id="red" class="col"></div>
-            <div id="blue" class="col"></div>
-        </div>
+            <div class="row bottom-row">
+                <div id="yellow" class="col"></div>
+                <div id="green" class="col"></div>
+            </div>
 
-        <div class="row">
-            <div id="yellow" class="col"></div>
-            <div id="green" class="col"></div>
-        </div>
+            <div class="gameTimer">
+                <p>Game Time: <span id="timer"></span></p>
+            </div>
+        </section>
+
+        <!-- HighScores -->
+            <section id="highscoresSection">
+                <!-- User Score and Save -->
+                <section id="userScore">
+                    <h1>You finished on level: <span id="userLevel"></span> in <span id="userTime"></span> seconds!</h1>
+
+                    <div class="initials-section">
+                        <form id="initials-submit-form">
+                            <p class = "formEl">Enter 3 Letter Initials:</p>
+                            <input id="initialsInput" type="text" placeholder="" class = "formEl">
+                            <button id="initials-submit-btn" type="submit" class="btn formEl">Submit</button>
+                        </form>
+                    </div>
+                    
+                </section>
 
 
+
+                <h1 class="section-header">Highscores</h1>
+                <ul id="highscoresTable"></ul>
+                <div class="closing-buttons">
+                    <button id="restart" class="btn">Try Again</button>
+                    <button id="clearHS" class="btn">Clear Highscores</button>
+                    <button id="home" class="btn">Home Page</button>
+                </div>
+            </section>
 
     </main>
-    <!-- Added link to the jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
+    <footer>
+        <p class="footer-text">Made with ❤️ in Charlotte, NC</p>
+
+                <div class="contact-links">
+
+                    <div class="contact-group contact-group-inner">
+                        <a target="_blank" href="https://github.com/Cjmoye30">
+                            <img class="contact-icon-img" src="assets/icons/github-icon.svg" alt="github icon"></a>
+                        <a class="contact-text-link" href="https://github.com/Cjmoye30">Github</a>
+                    </div>
+
+                    <div class="contact-group contact-group-inner">
+                        <a target="_blank" href="https://www.linkedin.com/in/cambric-moye-30/">
+                            <img class="contact-icon-img" src="assets/icons/linkedin-icon.svg" alt="linkedin icon"></a>
+                        <a class="contact-text-link" href="https://www.linkedin.com/in/cambric-moye-30">LinkedIn/</a>
+                    </div>
+
+                    <div class="contact-group contact-group-inner">
+                        <a target="_blank" href="mailto:Cjmoye30@gmail.com">
+                            <img class="contact-icon-img" src="assets/icons/gmail-icon.svg" alt="gamil icon"></a>
+                        <a href=""></a>
+                        <a class="contact-text-link" href="mailto:Cjmoye30@gmail.com">Gmail</a>
+                    </div>
+
+                    <div class="contact-group phone-icon-group">
+                        <img src="assets/icons/phone-icon.svg" class="contact-icon-img" alt="mobile phone icon">
+                        <p class="phone-text contact-text-link">919-920-9701</p>
+                    </div>
+                </div>
+    </footer>
+
+    <!-- JS Links -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="index.js" async defer></script>
 </body>
-
 </html>
