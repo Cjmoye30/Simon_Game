@@ -17,6 +17,7 @@ $("#startButton").click(function () {
     $("#level").text("Level: " + level);
     $("#titleSection").attr("style", "display: none");
     $("#level").attr("style", "display: block");
+    $(".gameTimer").attr("style", "display: block");
     playGame();
     gameClock();
 })
@@ -50,6 +51,18 @@ $(".col").click(function (e) {
             $("#highscoresSection").attr("style", "display: block");
         }, 1000);
     }
+})
+
+$("#restart").click(function () {
+    $("#highscoresSection").attr("style", "display: none");
+    $("gameContainer").attr("style", "display: block")
+    $("titleSection").attr("style", "display: block")
+})
+
+$("#highScoresTableLink").click(() => {
+    $("#highscoresSection").attr("style", "display: block");
+    $("gameContainer").attr("style", "display: none")
+    $("titleSection").attr("style", "display: none")
 })
 
 // Generate game pattern at the start of the document load
@@ -108,27 +121,45 @@ function userScore() {
     $("#userTime").text(finalSeconds);
 }
 
+
+
 // Event Listener to store the value of the user
 $("#initials-submit-btn").click(function (e) {
     e.preventDefault();
     let userIntials = $("#initialsInput").val();
 
-    // Change these alerts to a message display underneath where the credentails are entered
     if (userIntials.length > 10 || userIntials.length === 0) {
-        alert("Invalid. Please enter in an indentified in 10 or fewer characters.");
+        $("#error").text("Invalid. Please enter in an indentified in 10 or fewer characters.");
+        $("#error").attr("style", "display: block");
+        setTimeout(() => {
+            $("#error").attr("style", "display: none");
+        }, 3000);
     } else if (highscoreUsers.includes(userIntials)) {
-        alert("Those intials are already taken! Please enter a different value.");
+        $("#error").text("Those intials are already taken! Please enter a different value.");
+        $("#error").attr("style", "display: block");
+        setTimeout(() => {
+            $("#error").attr("style", "display: none");
+        }, 3000);
     } else {
         level -= 1;
         localStorage.setItem(userIntials, "Level: " + level + " Time: " + finalSeconds + " seconds");
+        location.href = "highscores.html";
+        // showHighscores();
     }
 })
 
-// Get all data from local storage to see what we can or cannot store
-for (let i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i);
-    highscoreUsers.push(key);
-    let value = localStorage.getItem(key);
+// Get all data from local storage and populate the highscores table
+function showHighscores() {
+    $("#highscoresTable").text("");
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        highscoreUsers.push(key);
+        let value = localStorage.getItem(key);
+
+        let highscoresEntry = $("<li>").html("<span class = 'username'>" + key + "</span> <span class='userscore'>" + value + "</span>").addClass("highscoresEntry");
+        $("#highscoresTable").append(highscoresEntry);
+    }
 }
 // Create game pattern on document load
+showHighscores();
 generateGamePattern();
