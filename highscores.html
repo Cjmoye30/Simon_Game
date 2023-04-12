@@ -8,17 +8,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/styleSheets/styles.css">
-    <link rel="stylesheet" href="assets/styleSheets/highscoresStyles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Rubik+Mono+One&family=Source+Code+Pro:wght@400;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
 
-    <!-- Notes: 
-        All of the highscores can be hidden from the user until they hit submit
-        When they hit submit, then they will be taken to this page which will load all of the highscores - including the most recent - on document load -->
-
     <header>
-        <h1>Simon Game</h1>
+        <h1><a href="index.html">Simon Game</a></h1>
         <a id="highscoresTableLink" href="">
             <a href="highscores.html">
                 <h2>HighScores</h2>
@@ -26,6 +29,7 @@
         </a>
     </header>
 
+    <section id="highscoresPage"></section>
     <main>
         <div id="titleEl">
             <h1>Highscores!</h1>
@@ -40,32 +44,32 @@
     <footer>
         <p class="footer-text">Made with ❤️ in Charlotte, NC</p>
 
-                <div class="contact-links">
+        <div class="contact-links">
 
-                    <div class="contact-group contact-group-inner">
-                        <a target="_blank" href="https://github.com/Cjmoye30">
-                            <img class="contact-icon-img" src="assets/icons/github-icon-white.svg" alt="github icon"></a>
-                        <a class="contact-text-link" href="https://github.com/Cjmoye30">Github</a>
-                    </div>
+            <div class="contact-group contact-group-inner">
+                <a target="_blank" href="https://github.com/Cjmoye30">
+                    <img class="contact-icon-img" src="assets/icons/github-icon-white.svg" alt="github icon"></a>
+                <a class="contact-text-link" href="https://github.com/Cjmoye30">Github</a>
+            </div>
 
-                    <div class="contact-group contact-group-inner">
-                        <a target="_blank" href="https://www.linkedin.com/in/cambric-moye-30/">
-                            <img class="contact-icon-img" src="assets/icons/linkedin-icon-white.svg" alt="linkedin icon"></a>
-                        <a class="contact-text-link" href="https://www.linkedin.com/in/cambric-moye-30">LinkedIn/</a>
-                    </div>
+            <div class="contact-group contact-group-inner">
+                <a target="_blank" href="https://www.linkedin.com/in/cambric-moye-30/">
+                    <img class="contact-icon-img" src="assets/icons/linkedin-icon-white.svg" alt="linkedin icon"></a>
+                <a class="contact-text-link" href="https://www.linkedin.com/in/cambric-moye-30">LinkedIn/</a>
+            </div>
 
-                    <div class="contact-group contact-group-inner">
-                        <a target="_blank" href="mailto:Cjmoye30@gmail.com">
-                            <img class="contact-icon-img" src="assets/icons/gmail-icon-white.svg" alt="gamil icon"></a>
-                        <a href=""></a>
-                        <a class="contact-text-link" href="mailto:Cjmoye30@gmail.com">Gmail</a>
-                    </div>
+            <div class="contact-group contact-group-inner">
+                <a target="_blank" href="mailto:Cjmoye30@gmail.com">
+                    <img class="contact-icon-img" src="assets/icons/gmail-icon-white.svg" alt="gamil icon"></a>
+                <a href=""></a>
+                <a class="contact-text-link" href="mailto:Cjmoye30@gmail.com">Gmail</a>
+            </div>
 
-                    <div class="contact-group phone-icon-group">
-                        <img src="assets/icons/iphone-icon-white.png" class="contact-icon-img" alt="mobile phone icon">
-                        <p class="phone-text contact-text-link">919-920-9701</p>
-                    </div>
-                </div>
+            <div class="contact-group phone-icon-group">
+                <img src="assets/icons/iphone-icon-white.png" class="contact-icon-img" alt="mobile phone icon">
+                <p class="phone-text contact-text-link">919-920-9701</p>
+            </div>
+        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 

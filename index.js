@@ -10,6 +10,9 @@ let finalSeconds = 0;
 let finalLevel = level - 1;
 let highscoreUsers = [];
 
+// Max level in HTML matches our max level here in case we change it
+$("#maxLevel").text(`Level ${maxLevel}`);
+
 // Event listener for the start button to initiate the game
 // Begin from level 1 and start the game clock
 $("#startButton").click(function () {
@@ -24,10 +27,20 @@ $("#startButton").click(function () {
 
 // Event listener for the game buttons - this essentially runs and controls the game
 $(".col").click(function (e) {
+
+    // Run the effects of the color clicked
     effects(e.target.id);
+
+    // Checking each click against the index of the computer array - if correct, increase the check index
     if (e.target.id === computerArr[checkIndex]) {
         checkIndex++;
-        if (level === checkIndex) {
+
+        // If max level is reached and the last check index is equal to the max level, game over
+        if (level === maxLevel && checkIndex === maxLevel) {
+            $("#level").text("VICTORY!");
+            endGame();
+            return;
+        } else if (level === checkIndex) {
             level++;
             setTimeout(function () {
                 $("#level").text("Level: " + level);
@@ -36,20 +49,7 @@ $(".col").click(function (e) {
         }
     } else {
         $("#level").text("Wrong!");
-        finalSeconds = seconds;
-        clearInterval(gameTimer);
-
-        $("body").attr("style", "background-color: red");
-        setTimeout(() => {
-            $("body").attr("style", "background-color: white");
-        }, 100);
-
-        // Show the user score and highscore sections
-        setTimeout(() => {
-            userScore();
-            $("#gameContainer").attr("style", "display: none");
-            $("#highscoresSection").attr("style", "display: block");
-        }, 1000);
+        endGame()
     }
 })
 
@@ -117,11 +117,15 @@ function gameClock() {
 
 // Showing user score in HTML
 function userScore() {
-    $("#userLevel").text(level - 1);
+
+    if(level === maxLevel) {
+        $("#userLevel").text(level);
+    } else {
+        // If the player did not make it to the final level, then that means they did not get the last level they were on correct, so they only finsished correctly level - 1 levels
+        $("#userLevel").text(level - 1);
+    }
     $("#userTime").text(finalSeconds);
 }
-
-
 
 // Event Listener to store the value of the user
 $("#initials-submit-btn").click(function (e) {
@@ -163,3 +167,22 @@ function showHighscores() {
 // Create game pattern on document load
 showHighscores();
 generateGamePattern();
+
+function endGame () {
+
+    finalSeconds = seconds;
+    clearInterval(gameTimer);
+
+    $("body").attr("style", "background-color: red");
+    setTimeout(() => {
+        $("body").attr("style", "background-color: white");
+    }, 100);
+
+    // Show the user score and highscore sections
+    setTimeout(() => {
+        userScore();
+        $("#gameContainer").attr("style", "display: none");
+        $("#highscoresSection").attr("style", "display: block");
+    }, 2000);
+
+}
