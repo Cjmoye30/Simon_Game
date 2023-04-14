@@ -32,7 +32,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
+    height: 150px;
     background-color: var(--c1);
     color: var(--c4);
     padding: 0 50px;
@@ -57,7 +57,6 @@ footer {
     flex-direction: column;
     margin-bottom: 0;
     padding: 20px;
-    height: 100%;
     border-top: 1px solid var(--c2);
 }
 
@@ -136,7 +135,7 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: var(--c4);
     margin: 0 auto;
