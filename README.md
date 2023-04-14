@@ -21,8 +21,8 @@
 
   ### Screenshots: 
 
-  - [Video Example]()
-  - Screenshot:
+  - [Video Example](https://drive.google.com/file/d/1u1EyA6XcNJyfdS7b_3QjOyoM9jy9JKFI/view?usp=sharing)
+  - Screenshot(s):
   ![Openining Page](/assets/images/simonGame1.png)
   ![Highscores](/assets/images/simonHS.png)
   ![Invalid Input](/assets/images/simonScore-invalid.png)
