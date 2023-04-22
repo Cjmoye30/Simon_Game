@@ -20,6 +20,7 @@
 
 
   ### Screenshots: 
+  - [Live Site](https://cjmoye30.github.io/simonGame/index.html)
 
   - [Video Example](https://drive.google.com/file/d/1u1EyA6XcNJyfdS7b_3QjOyoM9jy9JKFI/view?usp=sharing)
   - Screenshot(s):
