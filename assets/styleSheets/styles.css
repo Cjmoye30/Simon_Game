@@ -16,7 +16,6 @@ font-family: 'Source Code Pro', monospace;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: .1px solid black; */
 }
 
 body {
@@ -132,6 +131,10 @@ button {
 /* Boxes */
 .row {
     display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 #gameContainer {
@@ -144,12 +147,13 @@ button {
     width: 100%;
     background-color: var(--c4);
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 50px 10px;
 }
 
-.col {
-    height: 250px;
-    width: 250px;
+.game-tile {
+    width: 200px;
+    max-width: 400px;
+    aspect-ratio: 1;
     margin: 10px;
     border: 3px solid black;
     border-radius: 25px;
@@ -229,6 +233,7 @@ button {
 /* Footer Section */
 footer {
     text-align: center;
+    height: auto;
 }
 
 /* Contact Info */
@@ -260,7 +265,7 @@ footer {
     padding: 20px 0px;
     align-items: center;
     margin: 0 auto;
-    width: 50%;
+    width: 75%;
 }
 
 .contact-text-link {
@@ -358,4 +363,20 @@ footer {
         margin: 0 auto;
     }
 
+}
+
+@media screen and (max-width: 768px) {
+
+    #newHighscoreTable {
+        background-color: whitesmoke;
+        width: 90%;
+        padding: 20px;
+    }
+
+    .closingLinks {
+        display: flex;
+        width: 90%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 }
